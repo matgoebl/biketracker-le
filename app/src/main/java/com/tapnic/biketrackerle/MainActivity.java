@@ -232,7 +232,7 @@ public class MainActivity extends BaseActivity {
                 int evenColor = getResources().getColor(R.color.accent_dark);
                 int color = (i % 2) == 0 ? evenColor : oddColor;
                 SimpleDateFormat dateFormat = new SimpleDateFormat("dd.MM");
-                double roundedDistance = Double.valueOf(Util.formatDistance(distance)); // round
+                double roundedDistance = Math.ceil(distance*100)/100; // round to 2 decimal places
                 if (i != (wheelRevolutionPerDays.size() - 1)) {
                     completeDistance += distance;
                     BarModel model = new BarModel(dateFormat.format(date), (float) roundedDistance, color);
